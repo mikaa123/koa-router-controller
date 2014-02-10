@@ -1,4 +1,4 @@
-# koa-router-controller
+# what?! Controllers for koa.
 
 hold on, hold on! Here's something great.
 
@@ -26,4 +26,8 @@ var myController = controller({
 		// Implement me!
 	}
 });
+```
+
+```
+npm install koa-router-controller
 ```
