@@ -1,0 +1,20 @@
+{
+  "name": "koa-router-controller",
+  "version": "0.0.1",
+  "description": "Controllers with a Rails-like RESTful interface for koa",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "koa",
+    "controller",
+    "resource",
+    "rest"
+  ],
+  "author": "Michael Sokol",
+  "license": "MIT",
+  "dependencies": {
+    "koa-router": "~3.0.1"
+  }
+}
