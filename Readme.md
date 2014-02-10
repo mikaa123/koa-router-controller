@@ -3,6 +3,7 @@
 hold on, hold on! Here's something great.
 
 ‘‘‘‘
+
 var controller = require('koa-router-controller');
 
 var myController = controller({
@@ -26,4 +27,5 @@ var myController = controller({
 		// Implement me!
 	}
 });
+
 ‘‘‘‘
