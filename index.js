@@ -1,3 +1,6 @@
+// @author Michael Sokol
+// MIT License
+
 var Router = require('koa-router');
 
 function isGenerator(fn) {
@@ -10,7 +13,7 @@ var methods = {
 	create: { verb: 'post',   path: '/' },
 	update: { verb: 'put',    path: '/;id' },
 	remove: { verb: 'delete', path: '/:id' }
-}
+};
 
 /**
  * Creates a new Router with RESTful routes for
@@ -34,4 +37,4 @@ module.exports = function controller(actions) {
 	});
 
 	return controller;
-}
+};
