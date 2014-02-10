@@ -16,8 +16,7 @@ var methods = {
 };
 
 /**
- * Creates a new Router with RESTful routes for
- * a resource.
+ * Creates a new Router with RESTful routes for a resource.
  *
  * @param  {Object} actions
  * @return {Router}
