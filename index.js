@@ -1,11 +1,9 @@
-// @author Michael Sokol
-// MIT License
+/**
+ * @author Michael Sokol
+ * @license MIT
+ */
 
 var Router = require('koa-router');
-
-function isGenerator(fn) {
-	return typeof fn === 'function' && fn.constructor.name === 'GeneratorFunction';
-}
 
 var methods = {
 	list:   { verb: 'get',    path: '/' },
@@ -18,22 +16,25 @@ var methods = {
 /**
  * Creates a new Router with RESTful routes for a resource.
  *
- * @param  {Object} actions
+ * @param  {Object} ctrl
  * @return {Router}
  */
-module.exports = function controller(actions) {
-	var controller = new Router(),
-		actionFn,
+module.exports = function controller(ctrl) {
+	var router = new Router(),
+		middlewares,
 		method;
 
-	actions && Object.keys(methods).forEach(function (action) {
-		actionFn = actions[action];
+	ctrl && Object.keys(methods).forEach(function (action) {
+		middlewares = ctrl[action];
 
-		if (!isGenerator(actionFn)) return;
+		if (!middlewares) {
+			return;
+		}
 
 		method = methods[action];
-		method && controller[method.verb](method.path, actionFn);
+		(middlewares instanceof Array) || (middlewares = [middlewares]);
+		router[method.verb].bind(router, method.path).apply(router, middlewares);
 	});
 
-	return controller;
+	return router;
 };

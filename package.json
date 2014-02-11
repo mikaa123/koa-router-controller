@@ -1,6 +1,6 @@
 {
   "name": "koa-router-controller",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Controllers with a Rails-like RESTful interface for koa",
   "main": "index.js",
   "keywords": [
