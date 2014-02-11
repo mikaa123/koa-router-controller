@@ -7,7 +7,6 @@ function isGenerator(fn) {
 	return typeof fn === 'function' && fn.constructor.name === 'GeneratorFunction';
 }
 
-
 var methods = {
 	list:   { verb: 'get',    path: '/' },
 	show:   { verb: 'get',    path: '/:id' },
