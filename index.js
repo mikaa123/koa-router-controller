@@ -7,11 +7,12 @@ function isGenerator(fn) {
 	return typeof fn === 'function' && fn.constructor.name === 'GeneratorFunction';
 }
 
+
 var methods = {
 	list:   { verb: 'get',    path: '/' },
 	show:   { verb: 'get',    path: '/:id' },
 	create: { verb: 'post',   path: '/' },
-	update: { verb: 'put',    path: '/;id' },
+	update: { verb: 'put',    path: '/:id' },
 	remove: { verb: 'delete', path: '/:id' }
 };
 
@@ -26,7 +27,7 @@ module.exports = function controller(actions) {
 		actionFn,
 		method;
 
-	actions && Object.keys(actions).forEach(function (action) {
+	actions && Object.keys(methods).forEach(function (action) {
 		actionFn = actions[action];
 
 		if (!isGenerator(actionFn)) return;
