@@ -2,6 +2,10 @@
   "name": "koa-router-controller",
   "version": "0.0.2",
   "description": "Controllers with a Rails-like RESTful interface for koa",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mikaa123/koa-router-controller.git"
+  },
   "main": "index.js",
   "keywords": [
     "koa",
